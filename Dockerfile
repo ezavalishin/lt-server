@@ -8,6 +8,7 @@ COPY yarn.lock /app/
 RUN yarn install --production && yarn cache clean
 
 COPY . /app
+EXPOSE 3000
 
 ENV NODE_ENV production
 ENTRYPOINT ["node", "-r", "esm", "./bin/server"]
